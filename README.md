@@ -1,5 +1,7 @@
 # stl-fixer
 
+![STL Repair: before and after](preview.png)
+
 A small command-line tool that repairs STL files so your slicer stops complaining about them. I wrote it because Bambu Studio kept flagging downloaded models with non-manifold edges and open edges, and fixing them one by one in the GUI got old.
 
 Point it at a folder. Every `.stl` in there gets repaired and saved next to the original as `fixed_<name>.stl`. The originals are never touched.
