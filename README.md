@@ -50,6 +50,21 @@ At the end there is a summary with the totals per file. The exit code is 1 if an
 
 The "Verifying saved file" step reloads the file it just wrote and counts the problems again, so what it reports is what your slicer will see.
 
+## Browser version
+
+There is also a small web page in [`web/`](web/) for when you just want to fix one or two files without installing anything: **https://patrick-vogt.github.io/STL-Fixer/web/**
+
+Drop your STL files on it and download the repaired ones. Nothing is uploaded. The repair runs in your browser tab, in a JavaScript port of the same algorithm (`web/stl-fixer-core.js`). It gives the same results as the Python script on my test files, but the Python script is the main tool and the one to use for folders and larger batches.
+
+To run the page yourself:
+
+```bash
+cd web
+python3 -m http.server 8000
+```
+
+Then open http://localhost:8000. It needs to be served over http because browsers don't allow web workers from `file://` pages.
+
 ## What it fixes
 
 - Non-manifold edges (edges shared by more than two triangles)
